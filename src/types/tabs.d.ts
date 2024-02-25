@@ -5,7 +5,7 @@ export type meta = {
 export type item = {
     key:string,
     // label: string
-    keyPath: string
+    path: string
     name?:string
     meta?
 }

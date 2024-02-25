@@ -3,33 +3,25 @@
   <a-layout-sider v-model:collapsed="collapsed" collapsible>
     <div class="logo bigLogo" v-if="!collapsed">LOGO</div>
     <div class="logo smallLogo" v-else>LOGO</div>
-    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-      <template v-for="(menu, index) in list" :key="index">
-        <a-menu-item v-if="!menu.children" :key="menu.key" @click="router.push(menu.keyPath)">
+    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @select="selectFn">
+      <template v-for="(menu, index) in list" :key="menu.path">
+        <a-menu-item v-if="!menu.children" :key="menu.path" @click="router.push(menu.path)">
           <span>
-            <!-- <SvgIcon :name="`slider-${menu.meta.icon}`"></SvgIcon>
-            <span v-if="!collapsed">{{ menu.name }}</span> -->
             <item :menu="menu" :collapsed="collapsed"></item>
           </span>
         </a-menu-item>
 
         <a-sub-menu v-else>
           <template #title>
-            <!-- <span>
-              <SvgIcon :name="`slider-${menu.meta.icon}`"></SvgIcon>
-              <span v-if="!collapsed">{{ menu.name }}</span>
-            </span> -->
             <item :menu="menu" :collapsed="collapsed"></item>
           </template>
           <a-menu-item
-            @click="router.push(item.keyPath)"
-            :key="i"
+            @click="router.push(item.path)"
+            :key="item.path"
             v-if="menu.children"
             v-for="(item, i) in menu.children"
           >
             <item :menu="item"></item>
-            <!-- <SvgIcon :name="`slider-${item.meta.icon}`"></SvgIcon>
-            <span>{{ item.name }}</span> -->
           </a-menu-item>
         </a-sub-menu>
       </template>
@@ -43,18 +35,31 @@ import { getTabs } from '@/stores/index'
 import { onMounted } from 'vue'
 import { ref } from 'vue'
 import type { menuList } from '@/types/tabs'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import { computed } from 'vue'
 const store = getTabs()
 const list = ref<menuList>()
 
+// 控制是否展开
 const collapsed = ref<boolean>(false)
-const selectedKeys = ref<string[]>(['1'])
 const router = useRouter()
-
+const route = useRoute()
+const selectedKeys = ref<string[]>([''])
+// 获取路由
 onMounted(() => {
   list.value = store.list
-  console.log(list.value)
+  selectedKeys.value = [route.path]
+
+  // selectedKeys.value = route.path
 })
+
+computed(() => {
+  // selectedKeys = route.path
+})
+
+const selectFn = ({ item, key, selectedKeys }: any) => {
+  console.log(item, key, selectedKeys)
+}
 </script>
 
 <style lang="scss" scoped>

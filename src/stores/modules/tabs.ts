@@ -27,19 +27,19 @@ export const getTabs=defineStore("tabs",()=>{
                                 return list.value.push({
                                         name: item.name,
                                         key: item.name,
-                                        keyPath: item.path,
+                                        path: item.path,
                                         meta:item.meta
                                 })
                         }
                         return list.value.push({
                                 name:item.name,
                                 key:item.name,
-                                keyPath: item.path,
+                                path: item.path,
                                 meta:item.meta,
                                 children: item.children.map((child: any) => ({
                                         name:child.name,
                                         key:child.name,
-                                        keyPath: child.path,
+                                        path: child.path,
                                         meta:child.meta
                                 }))
                        })
