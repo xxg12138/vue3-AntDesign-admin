@@ -3,7 +3,6 @@ import router from '@/router/index'
 import { ref } from 'vue'
 import type { menuList } from '@/types/tabs'
 import {h} from 'vue'
-
 export const getTabs=defineStore("tabs",()=>{
         const list=ref([] as menuList)
         // tabbar缩大放小
@@ -23,6 +22,7 @@ export const getTabs=defineStore("tabs",()=>{
         // 返回路由tabbar
         const getTabList = () => {
                 return router.options.routes.forEach((item: any) => {
+                        if(item.hideen)return 
                         if (item.children.length === 1) {
                                 return list.value.push({
                                         name: item.name,

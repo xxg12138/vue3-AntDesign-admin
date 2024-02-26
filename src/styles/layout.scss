@@ -34,4 +34,7 @@ background-color: var(--header-color) !important;
     // 顶部背景色
     background-color: var(--header-color) !important;
     color: var( --color) !important;
+    .router-link-active, .ant-breadcrumb-separator{
+        color: var(--color) !important;
+    }
 }

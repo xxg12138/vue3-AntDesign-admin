@@ -20,21 +20,42 @@
         <FullscreenOutlined @click="fullScreen" class="sreen" v-else />
         <!-- 选择主题色 -->
         <input type="color" :value="data.colorPrimary" @input="changeColor" />
+        <!-- 下拉菜单 -->
         <a-dropdown @click.prevent>
           <a class="ant-dropdown-link">
-            <div class="avatar"></div>
+            <!-- 头像 -->
+            <a-avatar :size="48">
+              <template #icon>
+                <!-- 退出确认框 -->
+
+                <img :src="store.userInfo?.avatar" alt="" v-if="store.userInfo?.token" />
+                <div class="avatar" v-else></div>
+              </template>
+            </a-avatar>
           </a>
+          <!-- 菜单 -->
           <template #overlay>
             <a-menu>
-              <a-menu-item>
-                <a href="javascript:;">1st menu item</a>
+              <a-menu-item key="0">
+                <a href="http://localhost:5173/dashboard">个人中心</a>
               </a-menu-item>
-              <a-menu-item>
-                <a href="javascript:;">2nd menu item</a>
+              <a-menu-item key="1">
+                <a href="https://github.com/xxg12138/vue3-AntDesign-admin">项目地址</a>
               </a-menu-item>
-              <a-menu-item>
-                <a href="javascript:;">3rd menu item</a>
-              </a-menu-item>
+              <a-menu-divider />
+
+              <a-menu-item key="3">
+                <a-popconfirm
+                  title="你确认要退出吗?"
+                  ok-text="确认"
+                  cancel-text="取消"
+                  @confirm="confirm"
+                  @cancel="cancel"
+                  placement="left"
+                >
+                  退出登录
+                </a-popconfirm></a-menu-item
+              >
             </a-menu>
           </template>
         </a-dropdown>
@@ -56,9 +77,11 @@ import screenfull from 'screenfull'
 import { showMessage } from '@/utils/toast'
 import { FullscreenOutlined, FullscreenExitOutlined } from '@ant-design/icons-vue'
 import { useRoute } from 'vue-router'
-
+import { userUserStore } from '@/stores/index'
+import { message } from 'ant-design-vue'
+import router from '@/router'
 const route = useRoute()
-console.log(route)
+const store = userUserStore()
 
 const defaultData = {
   colorPrimary: '#1890ff'
@@ -87,13 +110,10 @@ const changeColor = async (e: any) => {
 const ToastCancel = () => {
   open.value = false
   flag.value = false
-  console.log('Cancel关闭:', flag.value)
 }
 const ToastOk = () => {
   open.value = false
   flag.value = true
-  console.log('OK关闭:', flag.value)
-
   root.value.style.setProperty('--header-color', color.value)
 }
 
@@ -119,6 +139,18 @@ const containsAtLeastTwoSlashes = (str: string) => {
   const regex = /\//g
   const matches = str.match(regex)
   return matches && matches.length >= 2
+}
+// 退出
+
+const confirm = (e: MouseEvent) => {
+  message.success('退出登录成功')
+  store.removeUser()
+  router.push('/login')
+}
+
+const cancel = (e: MouseEvent) => {
+  console.log(e)
+  message.warn('您已取消')
 }
 </script>
 
