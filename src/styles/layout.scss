@@ -28,7 +28,9 @@ background-color: var(--header-color) !important;
 .css-dev-only-do-not-override-1hsjdkk .ant-layout{
     margin-left: 5px;
 }
-
+.ant-menu{
+    background-color: var(--header-color) !important;
+}
 // header
 .ant-layout-header{
     // 顶部背景色
@@ -37,4 +39,8 @@ background-color: var(--header-color) !important;
     .router-link-active, .ant-breadcrumb-separator{
         color: var(--color) !important;
     }
+}
+
+.minMain{
+    margin-top: 70px !important;
 }

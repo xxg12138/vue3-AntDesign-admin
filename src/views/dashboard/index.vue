@@ -1,13 +1,19 @@
 <!--  -->
 <template>
   <div class="container">
-    <div id="histogram" style="width: 500px; height: 400px"></div>
+    <div
+      id="histogram"
+      style="width: 400px; height: 400px"
+      :class="{ Minwidth: windowWidth <= 620 }"
+    ></div>
   </div>
 </template>
 
 <script setup lang="ts">
 import echarts from '@/echarts/echart'
 import { onMounted } from 'vue'
+import hook from '@/hook/index'
+const { windowWidth } = hook()
 onMounted(() => {
   const histogram = document.getElementById('histogram')!
   const round = echarts.init(histogram)

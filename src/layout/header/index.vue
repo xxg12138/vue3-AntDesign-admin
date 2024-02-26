@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <a-layout-header>
+  <a-layout-header v-if="windowWidth >= 720">
     <div class="header">
       <div class="left">
         <a-breadcrumb>
@@ -61,6 +61,7 @@
       </div>
     </div>
   </a-layout-header>
+
   <toast
     :open="open"
     @ToastCancel="ToastCancel"
@@ -70,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import { theme } from 'ant-design-vue'
 import screenfull from 'screenfull'
 import { showMessage } from '@/utils/toast'
@@ -79,6 +80,8 @@ import { useRoute } from 'vue-router'
 import { userUserStore } from '@/stores/index'
 import { message } from 'ant-design-vue'
 import router from '@/router'
+import hook from '@/hook/index'
+const { windowWidth } = hook()
 const route = useRoute()
 const store = userUserStore()
 

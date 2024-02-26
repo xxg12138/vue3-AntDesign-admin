@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type {user} from '@/types/user'
-import { ref } from 'vue'
+import { onMounted, ref, watchEffect } from 'vue'
 
 export const userUserStore = defineStore("cp-user", () => {
     const userInfo = ref<user|null>()
@@ -11,8 +11,11 @@ export const userUserStore = defineStore("cp-user", () => {
 
     const removeUser = () => {
         userInfo.value = null
-      }
-    return{userInfo,setUser,removeUser}
+    }
+    
+
+
+    return{userInfo,setUser,removeUser,}
 }, {
     persist:true
 })
