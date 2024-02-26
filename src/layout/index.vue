@@ -11,8 +11,6 @@
 import mainTent from './main/index.vue'
 import headerNav from './header/index.vue'
 import slider from './tabbar/index.vue'
-
-
 </script>
 <style scoped>
 #components-layout-demo-side .logo {

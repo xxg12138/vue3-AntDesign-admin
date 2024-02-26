@@ -1,3 +1,4 @@
+<!-- svg图标组件 -->
 <template>
   <svg aria-hidden="true" class="svg-icon">
     <use :href="`#icon-${name}`" :fill="color" />

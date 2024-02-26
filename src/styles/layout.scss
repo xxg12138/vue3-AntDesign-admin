@@ -1,0 +1,37 @@
+// styles.scss
+@import './base.scss';
+
+// slider背景颜色
+.ant-layout-sider{
+background-color: var(--header-color) !important;
+// 展开背景色
+.ant-layout-sider-trigger{
+    background-color: #163057 !important;
+}
+// 可选择跳转背景颜色
+.ant-menu-light{
+    background-color:var(--header-color);
+    }
+    .ant-menu-item-selected{
+        background-color: #163057 !important;
+    
+    }
+    .ant-menu-submenu-arrow{
+        color: var( --color);
+    }
+.ant-menu-title-content{
+    color: var( --color);
+    font-size: 15px;
+    font-weight: 700;
+}
+}
+.css-dev-only-do-not-override-1hsjdkk .ant-layout{
+    margin-left: 5px;
+}
+
+// header
+.ant-layout-header{
+    // 顶部背景色
+    background-color: var(--header-color) !important;
+    color: var( --color) !important;
+}

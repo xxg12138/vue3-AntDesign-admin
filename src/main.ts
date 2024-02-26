@@ -5,6 +5,8 @@ import App from './App.vue'
 import router from './router'
 import 'ant-design-vue/dist/reset.css';
 import 'virtual:svg-icons-register'
+import '@/styles/layout.scss'
+
 
 const app = createApp(App)
 

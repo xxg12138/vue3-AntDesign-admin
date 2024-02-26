@@ -1,8 +1,6 @@
 <!--  -->
 <template>
-  <a-layout-content style="margin: 0 16px">
-    <RouterView></RouterView>
-  </a-layout-content>
+  <div class="container"></div>
 </template>
 
 <script setup lang="ts"></script>

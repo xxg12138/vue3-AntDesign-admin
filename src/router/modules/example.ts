@@ -1,27 +1,27 @@
 export default {
-    path:'/',
+  path:'/Table/',
   component: () => import("@/layout/index.vue"),
-  edirect: '/example',
-  name: "例子",
+  redirect: 'dynamic-table',
+  name: "Table",
   meta:{
     title: "例子",
     icon:'example'
   },
     children:[{
-      path:'/example',
-      name:"例子",
-      component:()=>import("@/views/example/index.vue"),
+      path:'dynamic-table',
+      name:"综合 Table",
+      component:()=>import("@/views/Table/index.vue"),
       meta:{
-        title: "例子",
+        title: "综合 Table",
         icon:'example'
       },
     },
     {
-      path:'/works',
-      name:'作品',
+      path:'drag-table',
+      name:'拖拽 Table',
       component:()=>import("@/views/works/index.vue"),
       meta:{
-        title: "作品",
+        title: "拖拽 Table",
         icon:'works'
       }
       }]

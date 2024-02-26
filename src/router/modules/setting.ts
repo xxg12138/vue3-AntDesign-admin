@@ -11,6 +11,7 @@ export default {
       path:'',
       name:'设置',
       component:()=>import("@/views/setting/index.vue"),
+      
       meta:{
         title: "设置",
         icom:'setting'

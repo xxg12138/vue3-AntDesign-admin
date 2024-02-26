@@ -2,11 +2,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 import setting from './modules/setting'
 import example from './modules/example'
 
-const  routes=[
+const routes = [
+  {
+    path:'/login',
+    component:()=>import("@/views/login/index.vue"),
+  },
   {
     path:'/dashboard',
     component:()=>import("@/layout/index.vue"),
-    edirect: '/dashboard',
+    redirect: 'dashboard',
     name: '探索',
     meta:{
       title: '探索',
@@ -15,7 +19,7 @@ const  routes=[
     children:[{
       path:'',
       name:'探索',
-      component:()=>import("@/views/dashboard/index.vue"),
+      component: () => import("@/views/dashboard/index.vue"),
       meta:{
         title: '探索',
         icon:'dashboard'

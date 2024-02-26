@@ -1,0 +1,10 @@
+import { createI18n} from 'vue-i18n'
+import message from './index'
+const localeData = {
+    legacy: true, // composition API
+    locale: 'cn',
+    messages: message,
+}
+const i18n = createI18n(localeData);
+ 
+export default i18n;
