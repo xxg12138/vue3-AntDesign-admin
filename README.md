@@ -53,7 +53,7 @@ Ant Design Vue：基于 Vue.js 实现的 Ant Design 设计规范，提供了丰�
   - Screenfull全屏
 
 - 組件
-  - 头像上传
+  - svg封装
   - 对话框
 
 ### 目录结构
