@@ -5,7 +5,7 @@ export default {
   name: "Table",
   meta:{
     title: "例子",
-    icon:'example'
+    icon:'Table'
   },
     children:[{
       path:'dynamic-table',
@@ -13,7 +13,7 @@ export default {
       component:()=>import("@/views/Table/index.vue"),
       meta:{
         title: "综合 Table",
-        icon:'example'
+        icon:'Table'
       },
     },
     {
@@ -22,7 +22,7 @@ export default {
       component:()=>import("@/views/works/index.vue"),
       meta:{
         title: "拖拽 Table",
-        icon:'works'
+        icon:'dragTable'
       }
       }]
   }

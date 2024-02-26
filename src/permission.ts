@@ -7,7 +7,6 @@ const whilteList = ['/login']
 router.beforeEach((to, from, next) => {
     const store=userUserStore()
     NProgress.start()
-    console.log(store.userInfo?.token);
     
   if (store.userInfo?.token) {
     if (whilteList.includes(to.path)) {

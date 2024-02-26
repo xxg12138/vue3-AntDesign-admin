@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import setting from './modules/setting'
-import example from './modules/example'
+import Table from './modules/Table'
 
 const routes = [
   {
@@ -28,7 +28,7 @@ const routes = [
     }]
   },
   setting,
-  example
+  Table
 ]
 
 const router = createRouter({
