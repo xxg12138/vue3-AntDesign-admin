@@ -9,16 +9,16 @@ const routes = [
     hideen:true
   },
   {
-    path:'/dashboard',
+    path:'/',
     component:()=>import("@/layout/index.vue"),
-    redirect: 'dashboard',
+    redirect: '/dashboard',
     name: '探索',
     meta:{
       title: '探索',
       icon:'dashboard'
     },
     children:[{
-      path:'',
+      path:'/dashboard',
       name:'探索',
       component: () => import("@/views/dashboard/index.vue"),
       meta:{
