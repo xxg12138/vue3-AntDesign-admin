@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import setting from './modules/setting'
 import Table from './modules/Table'
+import dashboard from './modules/dashboard'
 
 const routes = [
   {
@@ -11,24 +12,25 @@ const routes = [
   {
     path:'/',
     component:()=>import("@/layout/index.vue"),
-    redirect: '/dashboard',
-    name: '探索',
+    redirect: '/home',
+    name: '首页',
     meta:{
-      title: '探索',
-      icon:'dashboard'
+      title: '首页',
+      icon:'home'
     },
     children:[{
-      path:'/dashboard',
-      name:'探索',
-      component: () => import("@/views/dashboard/index.vue"),
+      path:'/home',
+      name:'首页',
+      component: () => import("@/views/home/index.vue"),
       meta:{
         title: '探索',
-        icon:'dashboard'
+        icon:'home'
       }
     }]
   },
+  dashboard,
+  Table,
   setting,
-  Table
 ]
 
 const router = createRouter({

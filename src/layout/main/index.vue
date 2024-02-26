@@ -1,5 +1,6 @@
-<!--  -->
+<!-- content内容 -->
 <template>
+  <div class="container"></div>
   <a-layout-content style="margin: 0 16px">
     <RouterView></RouterView>
   </a-layout-content>
@@ -7,4 +8,8 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  margin-top: 10px;
+}
+</style>

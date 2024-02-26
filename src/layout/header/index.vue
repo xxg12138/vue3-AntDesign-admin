@@ -27,7 +27,6 @@
             <a-avatar :size="48">
               <template #icon>
                 <!-- 退出确认框 -->
-
                 <img :src="store.userInfo?.avatar" alt="" v-if="store.userInfo?.token" />
                 <div class="avatar" v-else></div>
               </template>

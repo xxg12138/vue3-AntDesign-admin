@@ -10,7 +10,7 @@ router.beforeEach((to, from, next) => {
     
   if (store.userInfo?.token) {
     if (whilteList.includes(to.path)) {
-      next('/dashboard')
+      next('/')
     } else {
       next()
     }

@@ -22,7 +22,7 @@ export default {
       component:()=>import("@/views/works/index.vue"),
       meta:{
         title: "拖拽 Table",
-        icon:'dragTable'
+        icon:'DragTable'
       }
       }]
   }

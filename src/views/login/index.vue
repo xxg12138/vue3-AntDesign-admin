@@ -99,7 +99,7 @@ const submit = async () => {
   try {
     const data = await login(formState)
     store.setUser(data.data)
-    router.push('/dashboard')
+    router.push('/')
   } catch (error) {
     console.log(error)
   }

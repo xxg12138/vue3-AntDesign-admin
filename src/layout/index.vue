@@ -2,8 +2,10 @@
   <a-layout style="min-height: 100vh">
     <slider></slider>
     <a-layout>
-      <headerNav></headerNav>
-      <mainTent></mainTent>
+      <div class="main">
+        <headerNav></headerNav>
+        <mainTent></mainTent>
+      </div>
     </a-layout>
   </a-layout>
 </template>
@@ -24,5 +26,10 @@ import slider from './tabbar/index.vue'
 }
 [data-theme='dark'] .site-layout .site-layout-background {
   background: #141414;
+}
+.main {
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: #ffffff;
 }
 </style>
