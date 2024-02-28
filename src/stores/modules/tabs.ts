@@ -1,24 +1,11 @@
 import { defineStore } from 'pinia'
 import router from '@/router/index'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { menuList } from '@/types/tabs'
-import {h} from 'vue'
+import type { RouteRecordRaw } from 'vue-router';
+import hook from '@/hook/index'
 export const getTabs=defineStore("tabs",()=>{
         const list=ref([] as menuList)
-        // tabbar缩大放小
-        const flag=ref<boolean>(false)
-
-        // 设置flag
-        const setFlag=(e:boolean)=>{
-                flag.value=e
-                
-        }
-
-        const getFlag=()=>{
-                return flag.value
-        }
-      
-
         // 返回路由tabbar
         const getTabList = () => {
                 return router.options.routes.forEach((item: any) => {
@@ -45,9 +32,10 @@ export const getTabs=defineStore("tabs",()=>{
                        })
                 })
         }
-   
-        
+       
         getTabList()
         
-        return {list,flag,setFlag,getFlag}
+
+        
+        return {list}
 })

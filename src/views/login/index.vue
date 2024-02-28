@@ -52,7 +52,7 @@ import type { FormInstance } from 'ant-design-vue'
 import { login } from '@/api/login'
 import { userUserStore } from '@/stores/index'
 import { useRouter } from 'vue-router'
-
+import { showMessage } from '@/utils/toast'
 const store = userUserStore()
 const router = useRouter()
 // 登录注册切换
@@ -99,6 +99,7 @@ const submit = async () => {
   try {
     const data = await login(formState)
     store.setUser(data.data)
+    showMessage('success', '登录成功')
     router.push('/')
   } catch (error) {
     console.log(error)

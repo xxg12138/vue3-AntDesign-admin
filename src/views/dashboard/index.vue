@@ -4,7 +4,7 @@
     <div
       id="histogram"
       style="width: 400px; height: 400px"
-      :class="{ Minwidth: windowWidth <= 620 }"
+      :class="{ Minwidth: isWindowSmall }"
     ></div>
   </div>
 </template>
@@ -13,7 +13,7 @@
 import echarts from '@/echarts/echart'
 import { onMounted } from 'vue'
 import hook from '@/hook/index'
-const { windowWidth } = hook()
+const { isWindowSmall } = hook()
 onMounted(() => {
   const histogram = document.getElementById('histogram')!
   const round = echarts.init(histogram)

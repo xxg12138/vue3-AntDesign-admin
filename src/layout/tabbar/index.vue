@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <a-layout-sider v-model:collapsed="collapsed" collapsible v-if="windowWidth >= 720">
+  <a-layout-sider v-model:collapsed="collapsed" collapsible v-if="!isWindowSmall">
     <div class="logo bigLogo" v-if="!collapsed">LOGO</div>
     <div class="logo smallLogo" v-else>LOGO</div>
     <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
@@ -68,7 +68,7 @@ import { ref } from 'vue'
 import type { menuList } from '@/types/tabs'
 import { useRouter, useRoute } from 'vue-router'
 import hook from '@/hook/index'
-const { windowWidth } = hook()
+const { isWindowSmall } = hook()
 const store = getTabs()
 const list = ref<menuList>()
 

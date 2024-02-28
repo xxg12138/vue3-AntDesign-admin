@@ -14,11 +14,9 @@ const hook = () => {
 
   watchEffect(() => {
     isWindowSmall.value = windowWidth.value < 600;
-    console.log('Window size updated: ' + windowWidth.value);
   });
 
   return {
-    windowWidth,
     isWindowSmall
   };
 };
