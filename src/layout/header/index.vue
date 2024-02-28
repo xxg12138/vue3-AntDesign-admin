@@ -36,7 +36,7 @@
           <template #overlay>
             <a-menu>
               <a-menu-item key="0">
-                <a href="http://localhost:5173/dashboard">个人中心</a>
+                <a href="http://localhost:5173/home">个人中心</a>
               </a-menu-item>
               <a-menu-item key="1">
                 <a href="https://github.com/xxg12138/vue3-AntDesign-admin">项目地址</a>

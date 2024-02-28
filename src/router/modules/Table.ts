@@ -19,7 +19,7 @@ export default {
     {
       path:'drag-table',
       name:'拖拽 Table',
-      component:()=>import("@/views/works/index.vue"),
+      component:()=>import("@/views/dragTable/index.vue"),
       meta:{
         title: "拖拽 Table",
         icon:'DragTable'

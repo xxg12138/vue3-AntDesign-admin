@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {userUserStore } from '@/stores/index'
 
 const baseURL = "https://127.0.0.1:80"
 
@@ -8,6 +9,10 @@ const request=axios.create({
 })
 
 request.interceptors.request.use(config => {
+    const store = userUserStore()
+    if (store.userInfo?.token) {
+        config.headers['Authorization']=`Bearer ${store.userInfo.token}`
+    }
     return config
 })
 
