@@ -4,9 +4,14 @@ import Table from './modules/Table'
 import dashboard from './modules/dashboard'
 
 
+const user = JSON.parse(localStorage.getItem('cp-user') as string)
 
+if (user) {
 
-export const routes = [
+//   const store=getTabs.filterRoutes(user.userInfo.role)
+}
+
+export const constantRoutes = [
   {
     path:'/login',
     component: () => import("@/views/login/index.vue"),
@@ -26,11 +31,11 @@ export const routes = [
       name:'首页',
       component: () => import("@/views/home/index.vue"),
       meta:{
-        title: '探索',
+        title: '首页',
         icon:'home'
       }
     }]
-  }
+  },
 ]
 
 
@@ -44,7 +49,7 @@ export const  adminList = [
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  routes:[...constantRoutes],
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
@@ -53,14 +58,14 @@ const router = createRouter({
 /**
  * 重置路由
  */
-export function resetRouter() {
-  const newRouter = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes: routes
-  })
+// export function resetRouter() {
+//   const newRouter = createRouter({
+//     history: createWebHistory(import.meta.env.BASE_URL),
+//     routes: constantRoutes
+//   })
 
-  // @ts-ignore
-  router.matcher = newRouter.currentRoute.value.matched
-}
+//   // @ts-ignore
+//   router.matcher = newRouter.currentRoute.value.matched
+// }
 
 export default router

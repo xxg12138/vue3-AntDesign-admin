@@ -1,9 +1,10 @@
 export type meta = {
-    title:string
-    icon:string
+    title?:string
+    icon?: string
+    hidden?:boolean
 }
 export type item = {
-    key:string,
+    key?:string,
     // label: string
     path: string
     name?:string

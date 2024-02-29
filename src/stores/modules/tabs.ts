@@ -2,14 +2,18 @@ import { defineStore } from 'pinia'
 import router from '@/router/index'
 import { computed, ref } from 'vue'
 import type { menuList } from '@/types/tabs'
-import { adminList } from '@/router/index'
+import { adminList,constantRoutes } from '@/router/index'
 import {userUserStore } from './user'
 
-export const getTabs=defineStore("tabs",()=>{
-        const list=ref([] as menuList)
+
+export const getTabs = defineStore("tabs", () => {
+        const routes=ref<menuList>(constantRoutes)
+        const list = ref([] as menuList)
         // 返回路由tabbar
-        const getTabList = () => {
-                return router.options.routes.forEach((item: any) => {
+        const getTabList = (s: any) => {
+                list.value=[]
+                return s.forEach((item: any) => {
+
                         if(item.hidden)return 
                         if (item.children.length === 1) {
                                 return list.value.push({
@@ -34,18 +38,19 @@ export const getTabs=defineStore("tabs",()=>{
                 })
         }
        
-        getTabList()
-        // const filterRoutes = (context: any, menus: any) => {
-
+     
         // 动态路由筛选权限
-        const filterRoutes = ( menus: any) => {
-                const routes:any=[]
-                menus.forEach((key:any) => {
-                        routes.push(...adminList.filter(item=>item.name===key))
+        const filterRoutes = (menus: any) => {
+                const addroutes:menuList=[]
+                menus.forEach((key: any) => {
+                        addroutes.push(...adminList.filter(item=>item.name===key))
                 })
-                return routes
+                routes.value = [...constantRoutes, ...addroutes]
+              
+                return addroutes
         }
 
         
-        return {list,filterRoutes}
+        
+        return {list,filterRoutes,routes,getTabList}
 })

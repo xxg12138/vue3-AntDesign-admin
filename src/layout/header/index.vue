@@ -142,8 +142,8 @@ const containsAtLeastTwoSlashes = (str: string) => {
   const matches = str.match(regex)
   return matches && matches.length >= 2
 }
-// 退出
 
+// 退出
 const confirm = (e: MouseEvent) => {
   message.success('退出登录成功')
   store.removeUser()

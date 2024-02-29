@@ -2,9 +2,16 @@
 <template>
   <div class="container"></div>
   <a-layout-content style="margin: 0 16px">
-    <keep-alive>
-      <RouterView :key="key"></RouterView>
-    </keep-alive>
+    <!-- <Transition>
+      <keep-alive>
+        <RouterView :key="key"></RouterView>
+      </keep-alive>
+    </Transition> -->
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
   </a-layout-content>
 </template>
 

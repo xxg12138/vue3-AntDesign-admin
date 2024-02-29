@@ -80,7 +80,9 @@ const selectedKeys = ref<string[]>([''])
 // 获取路由
 onMounted(() => {
   list.value = store.list
+  // list.value = store.routes
   // 打开页面默认选择
+
   selectedKeys.value = [route.path]
 })
 </script>
