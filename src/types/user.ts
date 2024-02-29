@@ -7,6 +7,7 @@ export type user = {
     id: number
     name: string
     avatar:string
-    token:string
+    token: string
+    role:string[]
 }
 

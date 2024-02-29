@@ -2,9 +2,9 @@ export default {
     path:'/setting',
     component:()=>import("@/layout/index.vue"),
     edirect: '/setting',
-    name: '设置',
+    name: 'setting',
     meta:{
-      title: "例子",
+      title: "设置",
       icon:'setting'
     },
     children:[{

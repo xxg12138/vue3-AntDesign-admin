@@ -1,8 +1,13 @@
 import Mock from "mockjs";
+
+// 登录名单
+const roll = ['admin', 'user']
+// ROOT
 // 模拟接口数据
 Mock.mock(/login/, "post", (res: any) =>{
     const data = JSON.parse(res.body)
-    if (data.user === 'admin') {
+    const role=data.user==='admin'?['dashboard','Table','setting']:['User'] 
+    if (roll.includes(data.user)) {
         return {
             status: 200,
             message: '登录效验通过',
@@ -10,7 +15,8 @@ Mock.mock(/login/, "post", (res: any) =>{
                 id: 1,
                 name: "开发者",
                 avatar:  'https://xxg-1313373043.cos.ap-guangzhou.myqcloud.com/uploads/%E7%BE%8A.jpg',
-                token:'vue3-AntDesign-admin'
+                token: 'vue3-AntDesign-admin',
+                role
             }
           }
        

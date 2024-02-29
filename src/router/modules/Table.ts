@@ -4,7 +4,7 @@ export default {
   redirect: 'dynamic-table',
   name: "Table",
   meta:{
-    title: "例子",
+    title: "Table",
     icon:'Table'
   },
     children:[{

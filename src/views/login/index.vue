@@ -97,10 +97,14 @@ const rules: Record<string, Rule[]> = {
 // 登录
 const submit = async () => {
   try {
-    const data = await login(formState)
-    store.setUser(data.data)
-    showMessage('success', '登录成功')
-    router.push('/')
+    const { data } = await login(formState)
+    if (data) {
+      store.setUser(data)
+      showMessage('success', '登录成功')
+      router.push('/')
+    } else {
+      showMessage('error', '账号密码错误，请重新输入')
+    }
   } catch (error) {
     console.log(error)
   }

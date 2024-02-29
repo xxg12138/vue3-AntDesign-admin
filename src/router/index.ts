@@ -3,11 +3,14 @@ import setting from './modules/setting'
 import Table from './modules/Table'
 import dashboard from './modules/dashboard'
 
-const routes = [
+
+
+
+export const routes = [
   {
     path:'/login',
     component: () => import("@/views/login/index.vue"),
-    hideen:true
+    hidden:true
   },
   {
     path:'/',
@@ -27,15 +30,37 @@ const routes = [
         icon:'home'
       }
     }]
-  },
+  }
+]
+
+
+// 动态路由
+export const  adminList = [
   dashboard,
   Table,
-  setting,
+  setting
 ]
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 })
+
+
+
+/**
+ * 重置路由
+ */
+export function resetRouter() {
+  const newRouter = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: routes
+  })
+
+  // @ts-ignore
+  router.matcher = newRouter.currentRoute.value.matched
+}
 
 export default router
