@@ -55,7 +55,9 @@
             v-if="menu.children"
             v-for="(item, i) in menu.children"
           >
-            <item :menu="item"></item>
+            <!-- <item :menu="item"></item> -->
+            <SvgIcon :name="`slider-${item.meta.icon}`"></SvgIcon>
+            <span>{{ item.meta.title }}</span>
           </a-menu-item>
         </a-sub-menu>
       </template>
