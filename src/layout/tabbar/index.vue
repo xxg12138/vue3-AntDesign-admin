@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <a-layout-sider v-model:collapsed="collapsed" collapsible v-if="!isWindowSmall">
+  <a-layout-sider v-model:collapsed="collapsed" collapsible v-if="!isWindowSmall && list?.length">
     <div class="logo bigLogo" v-if="!collapsed">LOGO</div>
     <div class="logo smallLogo" v-else>LOGO</div>
     <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
@@ -21,7 +21,10 @@
             v-if="menu.children"
             v-for="(item, i) in menu.children"
           >
-            <item :menu="item"></item>
+            <!-- bug待修复 -->
+            <!-- <item :menu="item"></item> -->
+            <SvgIcon :name="`slider-${item.meta.icon}`"></SvgIcon>
+            <span>{{ item.meta.title }}</span>
           </a-menu-item>
         </a-sub-menu>
       </template>
@@ -84,6 +87,7 @@ onMounted(() => {
   // 打开页面默认选择
 
   selectedKeys.value = [route.path]
+  console.log('测试:', list.value)
 })
 </script>
 

@@ -1,5 +1,4 @@
-import { getTabs } from '@/stores/index'
-
+import { getTabs,userUserStore } from '@/stores/index'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import router from '@/router/index'
@@ -9,14 +8,15 @@ const whiteList = ['/login']
 
 
 router.beforeEach((to,from,next) => {
-    NProgress.start();
-  const user = JSON.parse(localStorage.getItem('cp-user') as string)
-  if (user.userInfo) {
+  NProgress.start();
+  const user=userUserStore().userInfo
+  if (user) {
+    
         if (whiteList.includes(to.path)) {
             next({path:'/'})
         } else {
           // 获取新增权限页面
-          const tabs =  getTabs().filterRoutes(user.userInfo.role)
+          const tabs =  getTabs().filterRoutes(user.role)
           // tabbar渲染
           getTabs().getTabList([...constantRoutes,...tabs])
                     tabs.forEach((route:any) => {
@@ -27,6 +27,8 @@ router.beforeEach((to,from,next) => {
         }
 
   } else {
+    console.log('未登录');
+    
         if (whiteList.indexOf(to.path) !== -1) {
             next();
           } else {

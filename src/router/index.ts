@@ -4,12 +4,6 @@ import Table from './modules/Table'
 import dashboard from './modules/dashboard'
 
 
-const user = JSON.parse(localStorage.getItem('cp-user') as string)
-
-if (user) {
-
-//   const store=getTabs.filterRoutes(user.userInfo.role)
-}
 
 export const constantRoutes = [
   {
