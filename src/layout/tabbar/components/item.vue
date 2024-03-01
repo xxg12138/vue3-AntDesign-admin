@@ -1,8 +1,7 @@
 <!--  -->
 <template>
   <SvgIcon :name="`slider-${menu.meta.icon}`"></SvgIcon>
-  <!-- <span v-if="!collapsed">{{ menu.name }}</span> -->
-  <span>{{ menu.meta.title }}</span>
+  <span v-if="!collapsed">{{ menu.meta.title }}</span>
 </template>
 
 <script setup lang="ts">
