@@ -23,8 +23,8 @@
           >
             <!-- bug待修复 -->
             <!-- <item :menu="item"></item> -->
-            <SvgIcon :name="`slider-${menu.meta.icon}`"></SvgIcon>
-            <span v-if="!collapsed">{{ menu.meta.title }}</span>
+            <SvgIcon :name="`slider-${item.meta.icon}`"></SvgIcon>
+            <span v-if="!collapsed">{{ item.meta.title }}</span>
           </a-menu-item>
         </a-sub-menu>
       </template>
@@ -56,8 +56,8 @@
             v-for="(item, i) in menu.children"
           >
             <!-- <item :menu="item"></item> -->
-            <SvgIcon :name="`slider-${menu.meta.icon}`"></SvgIcon>
-            <span v-if="!collapsed">{{ menu.meta.title }}</span>
+            <SvgIcon :name="`slider-${item.meta.icon}`"></SvgIcon>
+            <span v-if="!collapsed">{{ item.meta.title }}</span>
           </a-menu-item>
         </a-sub-menu>
       </template>
