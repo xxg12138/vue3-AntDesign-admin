@@ -3,6 +3,7 @@
   <div class="container">
     <!-- 卡片 -->
     <a-card
+      :class="{ min: isWindowSmall }"
       title="vue3-AntDesign-admin系统"
       :tab-list="tabList"
       :active-tab-key="key"
@@ -15,13 +16,22 @@
         </span>
       </template>
       <!-- 表单 -->
-      <a-form
+      <!-- <a-form
         :rules="rules"
         :model="formState"
         :hideRequiredMark="true"
         ref="formRef"
         name="custom-validation"
         :label-col="{ span: '4' }"
+        @finish="submit"
+      > -->
+      <a-form
+        :rules="rules"
+        :model="formState"
+        :hideRequiredMark="true"
+        ref="formRef"
+        :label-col="{ span: '4' }"
+        name="custom-validation"
         @finish="submit"
       >
         <a-form-item name="user" has-feedback label="用户名">
@@ -53,6 +63,8 @@ import { login } from '@/api/login'
 import { userUserStore } from '@/stores/index'
 import { useRouter } from 'vue-router'
 import { showMessage } from '@/utils/toast'
+import hook from '@/hook/index'
+const { isWindowSmall } = hook()
 const store = userUserStore()
 const router = useRouter()
 // 登录注册切换
@@ -122,12 +134,17 @@ const resetForm = () => {
   justify-content: center;
   align-items: center;
   .ant-card {
-    width: 400px !important;
+    width: 400px;
     height: 60%;
   }
   .prompt {
     font-size: 15px;
     font-weight: 700;
   }
+}
+
+.min {
+  width: 80% !important;
+  height: 70% !important;
 }
 </style>
