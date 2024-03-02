@@ -1,7 +1,6 @@
 export default {
     path:'/modularPackage',
     component:()=>import("@/layout/index.vue"),
-    // edirect: '/modularPackage',
     name: 'modularPackage',
     meta:{
       title: "组件封装",
