@@ -145,6 +145,6 @@ const resetForm = () => {
 
 .min {
   width: 80% !important;
-  height: 70% !important;
+  height: 450px !important;
 }
 </style>
