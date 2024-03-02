@@ -15,16 +15,6 @@
           {{ item.key }}
         </span>
       </template>
-      <!-- 表单 -->
-      <!-- <a-form
-        :rules="rules"
-        :model="formState"
-        :hideRequiredMark="true"
-        ref="formRef"
-        name="custom-validation"
-        :label-col="{ span: '4' }"
-        @finish="submit"
-      > -->
       <a-form
         :rules="rules"
         :model="formState"
@@ -56,6 +46,7 @@
 </template>
 
 <script setup lang="ts">
+import { legacyLogicalPropertiesTransformer } from 'ant-design-vue'
 import { reactive, ref } from 'vue'
 import type { Rule } from 'ant-design-vue/es/form'
 import type { FormInstance } from 'ant-design-vue'

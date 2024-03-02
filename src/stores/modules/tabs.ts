@@ -1,10 +1,8 @@
 import { defineStore } from 'pinia'
 import router from '@/router/index'
-import { computed, ref } from 'vue'
+import {  ref } from 'vue'
 import type { menuList } from '@/types/tabs'
 import { adminList,constantRoutes } from '@/router/index'
-import {userUserStore } from './user'
-
 
 export const getTabs = defineStore("tabs", () => {
         const routes=ref<menuList>(constantRoutes)

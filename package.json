@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
+    "@surely-vue/table": "^4.2.12",
     "ant-design-vue": "~4.1.2",
     "axios": "^1.6.7",
     "echarts": "^5.5.0",

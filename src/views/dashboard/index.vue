@@ -1,11 +1,12 @@
 <!--  -->
 <template>
   <div class="container">
-    <div
+    <a-card
+      hoverable
       id="histogram"
       style="width: 400px; height: 400px"
       :class="{ Minwidth: isWindowSmall }"
-    ></div>
+    ></a-card>
   </div>
 </template>
 

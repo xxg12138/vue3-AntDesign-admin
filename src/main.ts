@@ -8,9 +8,9 @@ import 'virtual:svg-icons-register'
 import '@/styles/layout.scss'
 import "./mock/index";
 import './permission'
-
+import STable from '@surely-vue/table';
 const app = createApp(App)
-
+app.use(STable);
 app.use(pinia)
 app.use(router)
 app.mount('#app')

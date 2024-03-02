@@ -8,6 +8,9 @@ dependencies:
   '@ant-design/icons-vue':
     specifier: ^7.0.1
     version: 7.0.1(vue@3.4.19)
+  '@surely-vue/table':
+    specifier: ^4.2.12
+    version: 4.2.12(vue@3.4.19)
   ant-design-vue:
     specifier: ~4.1.2
     version: 4.1.2(vue@3.4.19)
@@ -126,8 +129,24 @@ packages:
       '@ctrl/tinycolor': 3.6.1
     dev: false
 
+  /@ant-design/colors@7.0.2:
+    resolution: {integrity: sha512-7KJkhTiPiLHSu+LmMJnehfJ6242OCxSlR3xHVBecYxnMW8MS/878NXct1GqYARyL59fyeFdKRxXTfvR9SnDgJg==}
+    dependencies:
+      '@ctrl/tinycolor': 3.6.1
+    dev: false
+
   /@ant-design/icons-svg@4.4.2:
     resolution: {integrity: sha512-vHbT+zJEVzllwP+CM+ul7reTEfBR0vgxFe7+lREAsAA7YGsYpboiq2sQNeQeRvh09GfQgs/GyFEvZpJ9cLXpXA==}
+    dev: false
+
+  /@ant-design/icons-vue@6.1.0(vue@3.4.19):
+    resolution: {integrity: sha512-EX6bYm56V+ZrKN7+3MT/ubDkvJ5rK/O2t380WFRflDcVFgsvl3NLH7Wxeau6R8DbrO5jWR6DSTC3B6gYFp77AA==}
+    peerDependencies:
+      vue: '>=3.0.3'
+    dependencies:
+      '@ant-design/colors': 6.0.0
+      '@ant-design/icons-svg': 4.4.2
+      vue: 3.4.19(typescript@5.3.3)
     dev: false
 
   /@ant-design/icons-vue@7.0.1(vue@3.4.19):
@@ -668,6 +687,20 @@ packages:
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
+
+  /@surely-vue/table@4.2.12(vue@3.4.19):
+    resolution: {integrity: sha512-NvqIgQFHIOlvRR1wTGLa0vk0ybCSL1a47YxMpXR7mJk1McRDEsjCpd+OPxzj7s1vpeBQLiVPbVcp5K9K07U0PQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      vue: ^3.2.34
+    dependencies:
+      '@ant-design/colors': 7.0.2
+      '@ant-design/icons-vue': 6.1.0(vue@3.4.19)
+      ant-design-vue: 4.1.2(vue@3.4.19)
+      lodash-es: 4.17.21
+      resize-observer-polyfill: 1.5.1
+      vue: 3.4.19(typescript@5.3.3)
+    dev: false
 
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
