@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import setting from './modules/setting'
 import Table from './modules/Table'
 import dashboard from './modules/dashboard'
+import modularPackage from './modules/modularPackage'
 
 
 
@@ -37,7 +38,8 @@ export const constantRoutes = [
 export const  adminList = [
   dashboard,
   Table,
-  setting
+  setting,
+  modularPackage
 ]
 
 
@@ -58,7 +60,6 @@ const router = createRouter({
 //     routes: constantRoutes
 //   })
 
-//   // @ts-ignore
 //   router.matcher = newRouter.currentRoute.value.matched
 // }
 

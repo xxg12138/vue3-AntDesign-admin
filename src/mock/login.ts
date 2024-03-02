@@ -6,7 +6,7 @@ const roll = ['admin', 'user']
 // 模拟接口数据
 Mock.mock(/login/, "post", (res: any) =>{
     const data = JSON.parse(res.body)
-    const role=data.user==='admin'?['dashboard','Table','setting']:['User'] 
+    const role=data.user==='admin'?['dashboard','Table','modularPackage','setting']:['User'] 
     if (roll.includes(data.user)) {
         return {
             status: 200,

@@ -11,9 +11,6 @@ const props = defineProps<{
   menu: item
   collapsed?: boolean
 }>()
-onMounted(() => {
-  console.log('item测试：', props.menu)
-})
 </script>
 
 <style lang="scss" scoped>

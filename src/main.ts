@@ -8,6 +8,7 @@ import 'virtual:svg-icons-register'
 import '@/styles/layout.scss'
 import "./mock/index";
 import './permission'
+import '@wangeditor/editor/dist/css/style.css'
 import STable from '@surely-vue/table';
 const app = createApp(App)
 app.use(STable);

@@ -1,14 +1,14 @@
 export default {
-  path:'/Table/',
+  path:'/Table',
   component: () => import("@/layout/index.vue"),
-  redirect: 'dynamic-table',
+  // redirect: '/Table/dynamicTable',
   name: "Table",
   meta:{
     title: "Table",
     icon:'Table'
   },
     children:[{
-      path:'dynamic-table',
+      path:'dynamicTable',
       name:"综合 Table",
       component:()=>import("@/views/Table/index.vue"),
       meta:{
@@ -17,7 +17,7 @@ export default {
       },
     },
     {
-      path:'drag-table',
+      path:'dragTable',
       name:'拖拽 Table',
       component:()=>import("@/views/dragTable/index.vue"),
       meta:{

@@ -3,7 +3,8 @@
   <a-layout-sider v-model:collapsed="collapsed" collapsible v-if="!isWindowSmall && list?.length">
     <div class="logo bigLogo" v-if="!collapsed">LOGO</div>
     <div class="logo smallLogo" v-else>LOGO</div>
-    <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
+    <!-- <a-menu v-model:selectedKeys="selectedKeys" mode="inline"> -->
+    <a-menu mode="inline">
       <template v-for="(menu, index) in list" :key="menu.path">
         <a-menu-item v-if="!menu.children" :key="menu.path" @click="router.push(menu.path)">
           <span>
@@ -11,12 +12,18 @@
           </span>
         </a-menu-item>
 
-        <a-sub-menu v-else>
+        <a-sub-menu v-else :key="menu.key">
           <template #title>
             <item :menu="menu" :collapsed="collapsed"></item>
           </template>
-          <a-menu-item
+          <!-- <a-menu-item
             @click="router.push(menu.path + item.path)"
+            :key="item.path"
+            v-if="menu.children"
+            v-for="(item, i) in menu.children"
+          > -->
+          <a-menu-item
+            @click="changeFn(menu, item)"
             :key="item.path"
             v-if="menu.children"
             v-for="(item, i) in menu.children"
@@ -49,6 +56,7 @@
           <template #title>
             <item :menu="menu" :collapsed="collapsed"></item>
           </template>
+
           <a-menu-item
             @click="router.push(menu.path + item.path)"
             :key="item.path"
@@ -82,15 +90,16 @@ const collapsed = ref<boolean>(false)
 const router = useRouter()
 const route = useRoute()
 const selectedKeys = ref<string[]>([''])
+const a = ref([1, 2, 3])
 // 获取路由
 onMounted(() => {
   list.value = store.list
-  // list.value = store.routes
-  // 打开页面默认选择
-
   selectedKeys.value = [route.path]
-  console.log('测试:', list.value)
 })
+
+const changeFn = (menu: any, item: any) => {
+  router.push(menu.path + '/' + item.path)
+}
 </script>
 
 <style lang="scss" scoped>
