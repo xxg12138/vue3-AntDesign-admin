@@ -3,7 +3,7 @@ import setting from './modules/setting'
 import Table from './modules/Table'
 import dashboard from './modules/dashboard'
 import modularPackage from './modules/modularPackage'
-
+import documents from './modules/documents'
 
 
 export const constantRoutes = [
@@ -39,7 +39,8 @@ export const  adminList = [
   dashboard,
   Table,
   setting,
-  modularPackage
+  modularPackage,
+  documents
 ]
 
 

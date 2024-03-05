@@ -1,0 +1,29 @@
+<!--  -->
+<template>
+  <div class="container">
+    <iframe src="https://juejin.cn/" frameborder="0"></iframe>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style lang="scss" scoped>
+/** 关闭tag标签  */
+.container {
+  /* 50px = navbar = 50px */
+  height: calc(100vh - 100px);
+}
+
+/** 开启tag标签  */
+// .hasTagsView {
+//   .app-container {
+//     /* 84px = navbar + tags-view = 50px + 34px */
+//     height: calc(100vh - 84px);
+//   }
+// }
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+</style>

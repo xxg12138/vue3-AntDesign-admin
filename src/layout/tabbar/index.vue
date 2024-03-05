@@ -52,17 +52,23 @@
           </span>
         </a-menu-item>
 
-        <a-sub-menu v-else>
+        <a-sub-menu v-else :key="menu.key">
           <template #title>
             <item :menu="menu" :collapsed="collapsed"></item>
           </template>
-
-          <a-menu-item
+          <!-- <a-menu-item
             @click="router.push(menu.path + item.path)"
             :key="item.path"
             v-if="menu.children"
             v-for="(item, i) in menu.children"
+          > -->
+          <a-menu-item
+            @click="changeFn(menu, item)"
+            :key="item.path"
+            v-if="menu.children"
+            v-for="(item, i) in menu.children"
           >
+            <!-- bug待修复 -->
             <!-- <item :menu="item"></item> -->
             <SvgIcon :name="`slider-${item.meta.icon}`"></SvgIcon>
             <span v-if="!collapsed">{{ item.meta.title }}</span>

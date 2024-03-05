@@ -1,7 +1,7 @@
 export default {
     path:'/dashboard',
     component:()=>import("@/layout/index.vue"),
-    edirect: '/dashboard',
+    redirect: '/dashboard',
     name: 'dashboard',
     meta:{
       title: "探索",

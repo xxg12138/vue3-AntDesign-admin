@@ -38,7 +38,10 @@
         </a-form-item>
       </a-form>
       <div class="prompt">
-        <div>登陆用户名：admin</div>
+        <div>
+          <div>管理员用户名：admin</div>
+          <div>普通用户名：user</div>
+        </div>
         <div>密码随意</div>
       </div>
     </a-card>
@@ -131,6 +134,10 @@ const resetForm = () => {
   .prompt {
     font-size: 15px;
     font-weight: 700;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 export default {
     path:'/modularPackage',
-    component:()=>import("@/layout/index.vue"),
+  component: () => import("@/layout/index.vue"),
+  // redirect: '/dwangEditor',
     name: 'modularPackage',
     meta:{
       title: "组件封装",
@@ -8,22 +9,13 @@ export default {
     },
     children:[
     {
-      path:'wangEditor',
+      path:'',
       name:'富文本编辑器',
       component: () => import("@/views/wangEditor/wangEditor.vue"),
       meta:{
         title: "富文本编辑器",
-        icom:'wangEditor'
+        icon:'WangEditor'
       }
-      },
-      {
-        path:'modularPackage',
-        name:'测试',
-        component: () => import("@/views/modularPackage/index.vue"),
-        meta:{
-          title: "测试",
-          icom:'modularPackage'
-        }
       }
     ]
   }
