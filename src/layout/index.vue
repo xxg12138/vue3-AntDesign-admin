@@ -8,13 +8,47 @@
       </div>
     </a-layout>
   </a-layout>
+  <!-- 悬浮 -->
+  <a-float-button-group shape="circle" trigger="click" :style="{ right: '20px' }">
+    <a-float-button @click="outFn">
+      <template #icon>
+        <SvgIcon name="components-out"></SvgIcon>
+      </template>
+    </a-float-button>
+  </a-float-button-group>
+  <Toast
+    :open="show"
+    :title="'是否确认退出？'"
+    @ToastCancel="closeToast"
+    @ToastOk="closeOut"
+  ></Toast>
 </template>
 <script lang="ts" setup>
 import mainTent from './main/index.vue'
 import headerNav from './header/index.vue'
 import slider from './tabbar/index.vue'
 import hook from '@/hook/index'
+import { ref } from 'vue'
+import { userUserStore } from '@/stores/index'
+import { message } from 'ant-design-vue'
+import router from '@/router'
+
+const store = userUserStore()
+
 const { isWindowSmall } = hook()
+const show = ref(false)
+const outFn = () => {
+  show.value = true
+}
+const closeToast = () => {
+  show.value = false
+}
+const closeOut = () => {
+  show.value = false
+  message.success('退出登录成功')
+  store.removeUser()
+  router.push('/login')
+}
 </script>
 <style scoped>
 #components-layout-demo-side .logo {

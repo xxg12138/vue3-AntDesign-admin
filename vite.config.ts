@@ -12,6 +12,11 @@ import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 8080,
+    host: "127.12.138.1",
+    open:true
+  },
   plugins: [
     vue(),
     createSvgIconsPlugin({
