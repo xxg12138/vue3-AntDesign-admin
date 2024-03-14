@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-
+import cesium from 'vite-plugin-cesium';
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
@@ -13,11 +13,11 @@ import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    port: 8080,
-    host: "127.12.138.1",
+    host: "0.0.0.0",
     open:true
   },
   plugins: [
+    cesium(),
     vue(),
     createSvgIconsPlugin({
       // 配置svg文件路径
@@ -29,6 +29,7 @@ export default defineConfig({
         AntDesignVueResolver({ importStyle: false })
       ]
     }),
+  
     
   ],
   resolve: {

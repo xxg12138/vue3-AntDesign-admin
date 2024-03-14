@@ -9,7 +9,12 @@
     </a-layout>
   </a-layout>
   <!-- 悬浮 -->
-  <a-float-button-group shape="circle" trigger="click" :style="{ right: '20px' }">
+  <a-float-button-group
+    v-if="isWindowSmall"
+    shape="circle"
+    trigger="click"
+    :style="{ right: '20px' }"
+  >
     <a-float-button @click="outFn">
       <template #icon>
         <SvgIcon name="components-out"></SvgIcon>

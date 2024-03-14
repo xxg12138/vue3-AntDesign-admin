@@ -4,6 +4,8 @@ import Table from './modules/Table'
 import dashboard from './modules/dashboard'
 import modularPackage from './modules/modularPackage'
 import documents from './modules/documents'
+import threeDimensional from './modules/threeDimensional'
+
 
 
 export const constantRoutes = [
@@ -38,6 +40,7 @@ export const constantRoutes = [
 export const  adminList = [
   dashboard,
   Table,
+  threeDimensional,
   setting,
   modularPackage,
   documents

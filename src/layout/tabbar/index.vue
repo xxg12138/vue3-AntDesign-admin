@@ -123,4 +123,7 @@ const changeFn = (menu: any, item: any) => {
 .smallLogo {
   font-size: 15px;
 }
+.ant-menu-title-content svg {
+  margin-right: 10px;
+}
 </style>

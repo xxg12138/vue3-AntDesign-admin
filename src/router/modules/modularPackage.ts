@@ -16,6 +16,14 @@ export default {
         title: "富文本编辑器",
         icon:'WangEditor'
       }
-      }
+      },{
+        path:'signature',
+        name:'电子签名',
+        component: () => import("@/views/signature/index.vue"),
+        meta:{
+          title: "电子签名",
+          icon:'pen'
+        }
+        }
     ]
   }
