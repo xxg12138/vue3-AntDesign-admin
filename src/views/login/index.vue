@@ -49,7 +49,6 @@
 </template>
 
 <script setup lang="ts">
-import { legacyLogicalPropertiesTransformer } from 'ant-design-vue'
 import { reactive, ref } from 'vue'
 import type { Rule } from 'ant-design-vue/es/form'
 import type { FormInstance } from 'ant-design-vue'
@@ -129,7 +128,7 @@ const resetForm = () => {
   align-items: center;
   .ant-card {
     width: 400px;
-    height: 60%;
+    height: 400px;
   }
   .prompt {
     font-size: 15px;

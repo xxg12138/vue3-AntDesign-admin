@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-import cesium from 'vite-plugin-cesium';
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
@@ -17,7 +16,6 @@ export default defineConfig({
     open:true
   },
   plugins: [
-    cesium(),
     vue(),
     createSvgIconsPlugin({
       // 配置svg文件路径

@@ -9,10 +9,10 @@ export default {
     },
     children:[{
       path:'',
-      name:'gis',
-      component: () => import("@/views/gis/index.vue"),
+      name:'three',
+      component: () => import("@/views/three/index.vue"),
       meta:{
-        title: "gis",
+        title: "three",
         icom:'logistic'
       }
     }]
