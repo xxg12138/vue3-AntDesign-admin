@@ -1,6 +1,6 @@
 <template>
-  <a-layout style="min-height: 100vh">
-    <slider></slider>
+  <a-layout style="min-height: 100vh" has-sider>
+    <slider class="slider"></slider>
     <a-layout>
       <div class="main" :class="{ minMain: isWindowSmall }">
         <headerNav></headerNav>
@@ -8,13 +8,8 @@
       </div>
     </a-layout>
   </a-layout>
-  <!-- 悬浮 -->
-  <a-float-button-group
-    v-if="isWindowSmall"
-    shape="circle"
-    trigger="click"
-    :style="{ right: '20px' }"
-  >
+  <!-- 悬浮按钮 -->
+  <a-float-button-group v-if="isWindowSmall" shape="circle" trigger="click">
     <a-float-button @click="outFn">
       <template #icon>
         <SvgIcon name="components-out"></SvgIcon>
@@ -71,6 +66,6 @@ const closeOut = () => {
 .main {
   overflow-x: hidden;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #f0f3f6;
 }
 </style>

@@ -19,7 +19,7 @@ export default defineConfig({
     vue(),
     createSvgIconsPlugin({
       // 配置svg文件路径
-      iconDirs: [path.resolve(process.cwd(), 'src/icons')],
+      iconDirs: [path.resolve(process.cwd(), 'src/assets')],
     }),
     Components({
       // ui库解析器，也可以自定义

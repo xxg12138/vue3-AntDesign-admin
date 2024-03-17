@@ -3,6 +3,7 @@ export default {
     component:()=>import("@/layout/index.vue"),
     redirect: '/dashboard',
     name: 'dashboard',
+     role:['user'],
     meta:{
       title: "探索",
       icon:'dashboard'

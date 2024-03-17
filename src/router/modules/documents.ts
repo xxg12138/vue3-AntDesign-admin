@@ -2,7 +2,8 @@ export default {
     path:'/documents',
     component:()=>import("@/layout/index.vue"),
     redirect: '/documentsd',
-    name: 'documents',
+  name: 'documents',
+  role:['admin'],
     meta:{
       title: "平台文档",
       icon:'documents'

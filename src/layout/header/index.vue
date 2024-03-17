@@ -24,7 +24,7 @@
         <a-dropdown @click.prevent>
           <a class="ant-dropdown-link">
             <!-- 头像 -->
-            <a-avatar :size="48">
+            <a-avatar :size="30">
               <template #icon>
                 <!-- 退出确认框 -->
                 <img :src="store.userInfo?.avatar" alt="" v-if="store.userInfo?.token" />
@@ -116,7 +116,7 @@ const ToastCancel = () => {
 const ToastOk = () => {
   open.value = false
   flag.value = true
-  root.value.style.setProperty('--header-color', color.value)
+  root.value.style.setProperty('--slider-bg', color.value)
 }
 
 // 是否全屏
@@ -170,13 +170,6 @@ const cancel = (e: MouseEvent) => {
   align-items: center;
   .ant-dropdown-link {
     margin-left: 20px;
-    .avatar {
-      position: relative;
-      background-color: #c4e1c5;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
   }
 }
 

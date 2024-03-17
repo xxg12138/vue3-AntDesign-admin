@@ -3,28 +3,32 @@
 
 // slider背景颜色
 .ant-layout-sider{
-background-color: var(--header-color) !important;
+background-color: var(--slider-bg) !important;
 // 展开背景色
 .ant-layout-sider-trigger{
-    background-color: #163057 !important;
+    border-top: 1px solid #fff;
+    background-color: var(--slider-bg) !important;
 }
 // 可选择跳转背景颜色
 .ant-menu-light{
-    background-color:var(--header-color);
+    background-color:var(--slider-bg);
     }
     .ant-menu-item-selected{
-        background-color: #163057 !important;
+        background-color: var(--active-color) !important;
     
     }
     .ant-menu-submenu-arrow{
-        color: var( --color);
+        color: var(--slider-color);
     }
 .ant-menu-title-content{
-    color: var( --color);
+    color: var(--slider-color) !important;
     font-size: 15px;
     font-weight: 700;
 }
 }
+
+
+
 .css-dev-only-do-not-override-1hsjdkk .ant-layout{
     margin-left: 5px;
 }
@@ -34,13 +38,23 @@ background-color: var(--header-color) !important;
 // header
 .ant-layout-header{
     // 顶部背景色
-    background-color: var(--header-color) !important;
+    background-color: var(--header-bg) !important;
     color: var( --color) !important;
+    height: 50px !important;
+    line-height: 50px !important;
     .router-link-active, .ant-breadcrumb-separator{
         color: var(--color) !important;
     }
 }
+.ant-menu-dark {
+    background-color: var(--slider-bg) !important;
+}
+
 
 .minMain{
     margin-top: 70px !important;
+}
+
+.css-dev-only-do-not-override-1hsjdkk .ant-layout {
+margin-left: 0;
 }

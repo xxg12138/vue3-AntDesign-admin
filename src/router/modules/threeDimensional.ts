@@ -2,7 +2,8 @@ export default {
     path:'/threeDimensional',
     component:()=>import("@/layout/index.vue"),
     redirect: '/threeDimensional',
-    name: 'threeDimensional',
+  name: 'threeDimensional',
+  role:['admin'],
     meta:{
       title: "3D",
       icon:'3D'

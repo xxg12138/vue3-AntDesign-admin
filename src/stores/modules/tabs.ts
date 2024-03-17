@@ -48,7 +48,16 @@ export const getTabs = defineStore("tabs", () => {
                 return addroutes
         }
 
+        // role管理员标识
+        const ceshi = () => {
+                console.log(adminList);
+                const requiredRoles = ['user'];
+                const filteredData = adminList.filter(item => item.role.some(role => requiredRoles.includes(role)));
+
+                console.log(filteredData);
+        }
+//        ceshi()
         
         
-        return {list,filterRoutes,routes,getTabList}
+        return {list,filterRoutes,routes,getTabList}    
 })

@@ -2,7 +2,8 @@ export default {
     path:'/setting',
     component:()=>import("@/layout/index.vue"),
     edirect: '/setting',
-    name: 'setting',
+  name: 'setting',
+  role:['user'],
     meta:{
       title: "设置",
       icon:'setting'

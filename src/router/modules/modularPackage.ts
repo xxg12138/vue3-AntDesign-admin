@@ -1,8 +1,9 @@
 export default {
     path:'/modularPackage',
   component: () => import("@/layout/index.vue"),
-  // redirect: '/dwangEditor',
-    name: 'modularPackage',
+  redirect: '/dwangEditor',
+  name: 'modularPackage',
+  role:['admin'],
     meta:{
       title: "组件封装",
       icon:'modularPackage'

@@ -1,8 +1,9 @@
 export default {
   path:'/Table',
   component: () => import("@/layout/index.vue"),
-  // redirect: '/Table/dynamicTable',
+  redirect: '/Table/dynamicTable',
   name: "Table",
+  role:['admin'],
   meta:{
     title: "Table",
     icon:'Table'
