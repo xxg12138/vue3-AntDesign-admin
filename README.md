@@ -10,7 +10,7 @@
 
 # 简介：
 
-[Vvue3-AntDesign-admin](https://github.com/xxg12138/vue3-AntDesign-admin)是一个基于 Vue3、TypeScript、Vite 和 Pinia 构建的可复用后台管理系统，旨在提供高性能、可定制化的管理界面解决方案。
+[Vue3-AntDesign-admin](https://github.com/xxg12138/vue3-AntDesign-admin)是一个基于 Vue3、TypeScript、Vite 和 Pinia 构建的可复用后台管理系统，旨在提供高性能、可定制化的管理界面解决方案。
 
 支持动态路由配置，便于新增页面和菜单
 
